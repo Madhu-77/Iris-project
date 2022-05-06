@@ -1,38 +1,49 @@
-# prefixalog
 #include <iostream>
 using namespace std;
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	int t;
-	cin>>t;
-	while(t--)
+	int T;
+	cin>>T;
+	while(T--)
 	{
-		int n;
-		cin>>n;
-		for(i=1;i<=n;i++)
+		int N;
+		cin>>N;
+		int arr[N];
+		for(int i=1;i<=N;i++)
 		{
-			cin>>a[i];
+			cin>>arr[i];
+
 		}
-		int q;
-		cin>>q;
-		long long prefix[n+1]={0};
-		prefix[1]=a[1];
-		for(i=2;i<=n;i++)
+		long long int prefix[N+1]={0};
+		prefix[1]=arr[1];
+		for(int i=2;i<=N;i++)
 		{
-			prefix[i]=prefix[i-1]+a[i];
+			prefix[i]=prefix[i-1]+arr[i];
 		}
-		while(q--)
+
+		int Q;
+		cin>>Q;
+		while(Q--){
+		long long int L,R;
+		cin>>L>>R;
+		if(L==1)
 		{
-			int l,r;
-			cin>>l>>r;
-			if(l==1)
-			{
-				cout<<prefix(r)<<"\n";
-			}
-			else
-			{
-				cout<<prefix(r)-prefix(l-1)<<"\n";
-			}
+			cout<<prefix[R]<<"\n";
+
 		}
+		else
+		{
+			cout<<prefix[R]-prefix[L-1]<<"\n";
+		}
+		/*int sum=0;
+		for(int i=L;i<=R;i++)
+		{
+			sum=sum+arr[i];
+		}
+
+		cout<<sum<<endl;*/
+
 	}
+	}
+}
