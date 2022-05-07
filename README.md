@@ -144,3 +144,53 @@ int main()
         cout<<*it<<" ";
     }
 }
+
+	
+	#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,k,i,j,c,r;
+    cin>>n>>k;
+    int a[n],b[k];
+    vector <int> s;
+    for(i=1;i<=n;i++)
+    {
+        cin>>a[i];
+    }
+    for(i=1;i<=k;i++)
+    {
+        cin>>b[i];
+    }
+    for(i=1;i<=n;i++)
+    {c=0;
+        for(j=1;j<=k;j++)
+        {
+            if(a[i]==b[j])
+            {
+                c++;
+            }
+        }if(c>0)
+        {
+            s.push_back(a[i]);
+        }
+    }
+    for(i=1;i<=k;i++)
+    {r=0;
+        for(j=1;j<=n;j++)
+        {
+            if(b[i]==a[j])
+            {
+                r++;
+            }
+        }if(r>0)
+        {
+            s.push_back(b[i]);
+        }
+    }
+    vector <int>::iterator it;
+    for(it=s.begin();it!=s.end();it++)
+    {
+        cout<<*it<<" ";
+    }
+}
