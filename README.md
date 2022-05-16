@@ -194,3 +194,33 @@ int main()
         cout<<*it<<" ";
     }
 }
+	
+	
+	
+	
+	class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) 
+    {int c=0;
+     int sum;
+        for(int i=0;i<nums.size();i++)
+        {
+            for(int j=i;j<nums.size();j++)
+            {
+                sum=0;
+                for(int l=i;l<=j;l++)
+                {
+                    sum+=nums[l];
+                }
+                if(sum==k)
+                {
+                c++;
+                }
+            }
+
+        }
+        
+          return c;
+    }
+  
+};
